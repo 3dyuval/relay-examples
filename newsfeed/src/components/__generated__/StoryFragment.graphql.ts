@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<30eaa553a6acde39305cf67a23d323ee>>
+ * @generated SignedSource<<3d3f4bc1283081fd5b558ca6ef8294d3>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -17,7 +17,7 @@ export type StoryFragment$data = {
   };
   readonly summary: string | null;
   readonly thumbnail: {
-    readonly " $fragmentSpreads": FragmentRefs<"ImageFragment">;
+    readonly url: string;
   } | null;
   readonly title: string;
   readonly " $fragmentType": "StoryFragment";
@@ -57,6 +57,24 @@ const node: ReaderFragment = {
     {
       "alias": null,
       "args": null,
+      "concreteType": "Image",
+      "kind": "LinkedField",
+      "name": "thumbnail",
+      "plural": false,
+      "selections": [
+        {
+          "alias": null,
+          "args": null,
+          "kind": "ScalarField",
+          "name": "url",
+          "storageKey": null
+        }
+      ],
+      "storageKey": null
+    },
+    {
+      "alias": null,
+      "args": null,
       "concreteType": null,
       "kind": "LinkedField",
       "name": "poster",
@@ -69,34 +87,12 @@ const node: ReaderFragment = {
         }
       ],
       "storageKey": null
-    },
-    {
-      "alias": null,
-      "args": null,
-      "concreteType": "Image",
-      "kind": "LinkedField",
-      "name": "thumbnail",
-      "plural": false,
-      "selections": [
-        {
-          "args": [
-            {
-              "kind": "Literal",
-              "name": "width",
-              "value": 400
-            }
-          ],
-          "kind": "FragmentSpread",
-          "name": "ImageFragment"
-        }
-      ],
-      "storageKey": null
     }
   ],
   "type": "Story",
   "abstractKey": null
 };
 
-(node as any).hash = "779b222c2da4e07d32eef85f18a36314";
+(node as any).hash = "b289c20a865216449f00deddd8ad5b66";
 
 export default node;
