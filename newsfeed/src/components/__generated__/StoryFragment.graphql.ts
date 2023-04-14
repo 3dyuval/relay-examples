@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<3d3f4bc1283081fd5b558ca6ef8294d3>>
+ * @generated SignedSource<<45203c1e51ef418920839375e3f44281>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -17,7 +17,7 @@ export type StoryFragment$data = {
   };
   readonly summary: string | null;
   readonly thumbnail: {
-    readonly url: string;
+    readonly " $fragmentSpreads": FragmentRefs<"ImageFragment">;
   } | null;
   readonly title: string;
   readonly " $fragmentType": "StoryFragment";
@@ -63,11 +63,15 @@ const node: ReaderFragment = {
       "plural": false,
       "selections": [
         {
-          "alias": null,
-          "args": null,
-          "kind": "ScalarField",
-          "name": "url",
-          "storageKey": null
+          "args": [
+            {
+              "kind": "Literal",
+              "name": "width",
+              "value": 400
+            }
+          ],
+          "kind": "FragmentSpread",
+          "name": "ImageFragment"
         }
       ],
       "storageKey": null
@@ -93,6 +97,6 @@ const node: ReaderFragment = {
   "abstractKey": null
 };
 
-(node as any).hash = "b289c20a865216449f00deddd8ad5b66";
+(node as any).hash = "16b04e7cf0c735bbb3a48fa6e830c757";
 
 export default node;

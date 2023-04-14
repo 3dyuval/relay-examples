@@ -19,7 +19,7 @@ fragment StoryFragment on Story {
   summary
   createdAt
   thumbnail {
-    url
+    ...ImageFragment @arguments(width: 400)
   }
   poster {
     ...PosterBylineFragment

@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<0e53ff462ccd4b7ab43beaaccdc8f2de>>
+ * @generated SignedSource<<1a0c244f785ff7e3539dd7c09a3eb167>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -22,15 +22,13 @@ export type NewsfeedQuery = {
 };
 
 const node: ConcreteRequest = (function(){
-var v0 = [
-  {
-    "alias": null,
-    "args": null,
-    "kind": "ScalarField",
-    "name": "url",
-    "storageKey": null
-  }
-],
+var v0 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "altText",
+  "storageKey": null
+},
 v1 = {
   "alias": null,
   "args": null,
@@ -107,7 +105,22 @@ return {
             "kind": "LinkedField",
             "name": "thumbnail",
             "plural": false,
-            "selections": (v0/*: any*/),
+            "selections": [
+              {
+                "alias": null,
+                "args": [
+                  {
+                    "kind": "Literal",
+                    "name": "width",
+                    "value": 400
+                  }
+                ],
+                "kind": "ScalarField",
+                "name": "url",
+                "storageKey": "url(width:400)"
+              },
+              (v0/*: any*/)
+            ],
             "storageKey": null
           },
           {
@@ -143,7 +156,27 @@ return {
                 "kind": "LinkedField",
                 "name": "profilePicture",
                 "plural": false,
-                "selections": (v0/*: any*/),
+                "selections": [
+                  {
+                    "alias": null,
+                    "args": [
+                      {
+                        "kind": "Literal",
+                        "name": "height",
+                        "value": 60
+                      },
+                      {
+                        "kind": "Literal",
+                        "name": "width",
+                        "value": 60
+                      }
+                    ],
+                    "kind": "ScalarField",
+                    "name": "url",
+                    "storageKey": "url(height:60,width:60)"
+                  },
+                  (v0/*: any*/)
+                ],
                 "storageKey": null
               },
               (v1/*: any*/)
@@ -157,12 +190,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "12419ecc9357e2c8c2f0fb41e95dc6e4",
+    "cacheID": "179587288741c9764df0f029d3932d9d",
     "id": null,
     "metadata": {},
     "name": "NewsfeedQuery",
     "operationKind": "query",
-    "text": "query NewsfeedQuery {\n  topStory {\n    ...StoryFragment\n    id\n  }\n}\n\nfragment PosterBylineFragment on Actor {\n  __isActor: __typename\n  name\n  profilePicture {\n    url\n  }\n}\n\nfragment StoryFragment on Story {\n  title\n  summary\n  createdAt\n  thumbnail {\n    url\n  }\n  poster {\n    __typename\n    ...PosterBylineFragment\n    id\n  }\n}\n"
+    "text": "query NewsfeedQuery {\n  topStory {\n    ...StoryFragment\n    id\n  }\n}\n\nfragment ImageFragment_3XLoCc on Image {\n  url(width: 60, height: 60)\n  altText\n}\n\nfragment ImageFragment_OxVt3 on Image {\n  url(width: 400)\n  altText\n}\n\nfragment PosterBylineFragment on Actor {\n  __isActor: __typename\n  name\n  profilePicture {\n    ...ImageFragment_3XLoCc\n  }\n}\n\nfragment StoryFragment on Story {\n  title\n  summary\n  createdAt\n  thumbnail {\n    ...ImageFragment_OxVt3\n  }\n  poster {\n    __typename\n    ...PosterBylineFragment\n    id\n  }\n}\n"
   }
 };
 })();
