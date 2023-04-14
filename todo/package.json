@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "start": "babel-node ./server.js",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && babel-node ./server.js",
     "build": "relay-compiler",
     "flow-typed": "flow-typed install --flowVersion=0.168.0",
     "flow": "flow",

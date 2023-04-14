@@ -4,7 +4,7 @@
   "description": "Newsfeed Example",
   "private": true,
   "scripts": {
-    "build": "webpack",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && webpack",
     "tsc": "tsc",
     "prettier": "prettier . --write",
     "lint": "eslint .",
