@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<465881aac43932080f3c596b9a3eec58>>
+ * @generated SignedSource<<fcf9f5d6fe530d45ae8dc38a5fd8d669>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -145,6 +145,7 @@ return {
                 "kind": "TypeDiscriminator",
                 "abstractKey": "__isActor"
               },
+              (v0/*: any*/),
               {
                 "alias": null,
                 "args": null,
@@ -181,8 +182,7 @@ return {
                   (v1/*: any*/)
                 ],
                 "storageKey": null
-              },
-              (v0/*: any*/)
+              }
             ],
             "storageKey": null
           }
@@ -192,12 +192,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "640370179b3782f19de6b07ba734cf72",
+    "cacheID": "08b44dd910d07281cc87001f7447e905",
     "id": null,
     "metadata": {},
     "name": "NewsfeedQuery",
     "operationKind": "query",
-    "text": "query NewsfeedQuery {\n  topStories {\n    id\n    ...StoryFragment\n  }\n}\n\nfragment ImageFragment_3XLoCc on Image {\n  url(width: 60, height: 60)\n  altText\n}\n\nfragment ImageFragment_OxVt3 on Image {\n  url(width: 400)\n  altText\n}\n\nfragment PosterBylineFragment on Actor {\n  __isActor: __typename\n  name\n  profilePicture {\n    ...ImageFragment_3XLoCc\n  }\n}\n\nfragment StoryFragment on Story {\n  title\n  summary\n  createdAt\n  thumbnail {\n    ...ImageFragment_OxVt3\n  }\n  poster {\n    __typename\n    ...PosterBylineFragment\n    id\n  }\n}\n"
+    "text": "query NewsfeedQuery {\n  topStories {\n    id\n    ...StoryFragment\n  }\n}\n\nfragment ImageFragment_3XLoCc on Image {\n  url(width: 60, height: 60)\n  altText\n}\n\nfragment ImageFragment_OxVt3 on Image {\n  url(width: 400)\n  altText\n}\n\nfragment PosterBylineFragment on Actor {\n  __isActor: __typename\n  id\n  name\n  profilePicture {\n    ...ImageFragment_3XLoCc\n  }\n}\n\nfragment StoryFragment on Story {\n  title\n  summary\n  createdAt\n  thumbnail {\n    ...ImageFragment_OxVt3\n  }\n  poster {\n    __typename\n    ...PosterBylineFragment\n    id\n  }\n}\n"
   }
 };
 })();

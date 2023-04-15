@@ -8,19 +8,23 @@ import type { PosterDetailsHovercardContentsQuery as QueryType } from "./__gener
 import type { PosterDetailsHovercardContentsBodyFragment$key } from "./__generated__/PosterDetailsHovercardContentsBodyFragment.graphql";
 
 export const PosterDetailsHovercardContentsQuery = graphql`
-  query PosterDetailsHovercardContentsQuery {
-    node(id: "1") {
-      ... on Actor {
+  query PosterDetailsHovercardContentsQuery ($posterID: ID!) {
+    node(id: $posterID) {
+      ... on Actor { #called type refinement https://relay.dev/docs/tutorial/queries-2/
         ...PosterDetailsHovercardContentsBodyFragment
       }
     }
   }
 `;
 
-export default function PosterDetailsHovercardContents({}: {}): React.ReactElement {
+export default function PosterDetailsHovercardContents({
+  posterID
+}: {
+  posterID: string
+}): React.ReactElement {
   const data = useLazyLoadQuery<QueryType>(
     PosterDetailsHovercardContentsQuery,
-    {}
+    {posterID}
   );
   return (
     <div className="posterHovercard">
