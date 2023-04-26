@@ -6,6 +6,7 @@ import Timestamp from "./Timestamp"
 
 import type { PosterDetailsHovercardContentsQuery as QueryType } from "./__generated__/PosterDetailsHovercardContentsQuery.graphql"
 import type { PosterDetailsHovercardContentsBodyFragment$key } from "./__generated__/PosterDetailsHovercardContentsBodyFragment.graphql"
+import OrganizationKind from "./OrganizationKind"
 
 export const PosterDetailsHovercardContentsQuery = graphql`
   query PosterDetailsHovercardContentsQuery($posterID: ID!) {
@@ -36,11 +37,20 @@ export default function PosterDetailsHovercardContents({
 
 const PosterDetailsHovercardContentsBodyFragment = graphql`
   fragment PosterDetailsHovercardContentsBodyFragment on Actor {
-    id
     name
     joined
     profilePicture {
       ...ImageFragment
+    }
+    # official naming for this is inline fragments
+    ... on Organization {
+      organizationKind
+    }
+    # also called type refinement
+    ... on Person {
+      location {
+        name
+      }
     }
   }
 `
@@ -64,6 +74,12 @@ function PosterDetailsHovercardContentsBody({
         <li>
           Joined <Timestamp time={data.joined} />
         </li>
+        {data.location != null && (
+          <li>{data.location.name}</li>
+        )}
+        {data.organizationKind != null &&(
+          <li><OrganizationKind kind={data.organizationKind} /></li>
+        )}
       </ul>
       <div className="posterHovercard__buttons">
         <button>Friend</button>
