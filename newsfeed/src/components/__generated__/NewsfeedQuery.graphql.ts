@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<da9c8a6918facd2173ce498c1dfe1c2c>>
+ * @generated SignedSource<<7c037c0653ba4cab847c633e5bc9d443>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -127,6 +127,7 @@ return {
                 "name": "name",
                 "storageKey": null
               },
+              (v0/*: any*/),
               {
                 "alias": null,
                 "args": null,
@@ -156,8 +157,7 @@ return {
                   (v1/*: any*/)
                 ],
                 "storageKey": null
-              },
-              (v0/*: any*/)
+              }
             ],
             "storageKey": null
           },
@@ -192,12 +192,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "561c4317fe6987dfcb257d9dfd671e32",
+    "cacheID": "15c05e1f0cb3bc4cadd9da699bf5837d",
     "id": null,
     "metadata": {},
     "name": "NewsfeedQuery",
     "operationKind": "query",
-    "text": "query NewsfeedQuery {\n  topStories {\n    id\n    ...StoryFragment\n  }\n}\n\nfragment ImageFragment_3XLoCc on Image {\n  url(width: 60, height: 60)\n  altText\n}\n\nfragment ImageFragment_OxVt3 on Image {\n  url(width: 400)\n  altText\n}\n\nfragment PosterBylineFragment on Actor {\n  __isActor: __typename\n  name\n  profilePicture {\n    ...ImageFragment_3XLoCc\n  }\n}\n\nfragment StoryFragment on Story {\n  title\n  summary\n  createdAt\n  poster {\n    __typename\n    ...PosterBylineFragment\n    id\n  }\n  thumbnail {\n    ...ImageFragment_OxVt3\n  }\n}\n"
+    "text": "query NewsfeedQuery {\n  topStories {\n    id\n    ...StoryFragment\n  }\n}\n\nfragment ImageFragment_3XLoCc on Image {\n  url(width: 60, height: 60)\n  altText\n}\n\nfragment ImageFragment_OxVt3 on Image {\n  url(width: 400)\n  altText\n}\n\nfragment PosterBylineFragment on Actor {\n  __isActor: __typename\n  name\n  id\n  profilePicture {\n    ...ImageFragment_3XLoCc\n  }\n}\n\nfragment StoryFragment on Story {\n  title\n  summary\n  createdAt\n  poster {\n    __typename\n    ...PosterBylineFragment\n    id\n  }\n  thumbnail {\n    ...ImageFragment_OxVt3\n  }\n}\n"
   }
 };
 })();
